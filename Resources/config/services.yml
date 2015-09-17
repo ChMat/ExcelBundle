@@ -1,0 +1,7 @@
+parameters:
+
+services:
+    chmat.excel_reader:
+        class: ChMat\ExcelBundle\Service\ExcelReader
+    chmat.excel_writer:
+        class: ChMat\ExcelBundle\Service\ExcelWriter

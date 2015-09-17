@@ -1,0 +1,22 @@
+{
+  "name": "chmat/excel-bundle",
+  "description": "This bundle integrates phpExcel library into a Symfony bundle. It lets you read (and write) simple Excel|CSV files.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Christian Mattart",
+      "email": "christian@chmat.be"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ChMat\\ExcelBundle\\": ""
+    }
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "symfony/symfony": "~2.7",
+    "phpoffice/phpexcel": "^1.8"
+  }
+}
