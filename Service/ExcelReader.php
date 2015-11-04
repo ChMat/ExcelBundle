@@ -238,7 +238,7 @@ class ExcelReader
         {
             $this->chunkSize = $chunkSize;
         }
-        $currentChunkSize = ($this->rowIndex + $this->chunkSize > $this->numberOfRows) ? $this->numberOfRows - $this->rowIndex : $this->chunkSize;
+        $currentChunkSize = ($this->rowIndex + $this->chunkSize > $this->numberOfRows) ? $this->numberOfRows - $this->rowIndex + 1 : $this->chunkSize;
 
         // Si on est au bout du fichier ou au-delà, on s'arrête.
         if ($currentChunkSize <= 0)
