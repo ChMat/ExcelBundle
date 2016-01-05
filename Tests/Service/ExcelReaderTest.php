@@ -30,7 +30,7 @@ class ExcelReaderTest extends PHPUnit_Framework_TestCase
 	private function init()
 	{
 		$this->reader = new ExcelReader();
-		$this->reader->load(__DIR__ . '/../data/test_read.xls');
+		$this->reader->load(__DIR__ . '/../Data/test_read.xls');
 	}
 	
 	public function testCounts()
