@@ -11,7 +11,7 @@ Add the bundle reference in the `require` section:
 
     "require": {
     // ...
-    "chmat/excel-bundle": "~1.0" // check packagist.org for other tags
+    "chmat/excel-bundle": "~2.0" // check Versions section for details on version numbering
     // ...
     }
 
@@ -20,6 +20,8 @@ Add the bundle reference in the `require` section:
     $ composer update
 
 ### Enable the Bundle in `AppKernel.php`
+
+Modify your `app/AppKernel.php` file by declaring this bundle.
 
     // In app/AppKernel.php
     <?php
@@ -37,7 +39,7 @@ Add the bundle reference in the `require` section:
 
 **To be updated.**
 
-This bundle declares two services for your enjoyment:
+This bundle declares two services for your enjoyment. You don't have to declare them yourself.
 
     services:
         chmat.excel_reader:
@@ -50,6 +52,18 @@ This bundle declares two services for your enjoyment:
 ## Contributing
 
 Pull requests are welcome !
+
+## Versions
+
+Since v2.0, version numbers are constructed with the following principles.
+
+A valid version number will always be in the form of x.y.z. An increment of any of the value means that:
+
+- **x** − major changes: WILL include breaking changes most of the time
+- **y** − new features: MAY include breaking changes
+- **z** − bugfixes and updates to the documentation: WILL NOT include breaking changes
+
+For more information on available version numbers, please refer to the [repository on GitHub](https://github.com/ChMat/ExcelBundle/).
 
 ## License
 
