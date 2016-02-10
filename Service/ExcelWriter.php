@@ -13,6 +13,7 @@ namespace ChMat\ExcelBundle\Service;
 
 use ChMat\ExcelBundle\Exception\CannotReadFileException;
 use ChMat\ExcelBundle\Exception\FileExistsException;
+use ChMat\ExcelBundle\Service\Excel\HeadersReadFilter;
 
 /**
  * Simple Excel Worksheet Writer.
@@ -158,6 +159,7 @@ class ExcelWriter
         $this->filename = $filename;
 
         $this->reader = \PHPExcel_IOFactory::createReader($this->fileType);
+        $this->reader->setReadFilter(new HeadersReadFilter());
 
         if ($this->fileType !== 'CSV')
         {
