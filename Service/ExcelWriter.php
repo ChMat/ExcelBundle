@@ -159,7 +159,6 @@ class ExcelWriter
         $this->filename = $filename;
 
         $this->reader = \PHPExcel_IOFactory::createReader($this->fileType);
-        $this->reader->setReadFilter(new HeadersReadFilter());
 
         if ($this->fileType !== 'CSV')
         {
