@@ -37,7 +37,7 @@ class ExcelWriterTest extends \PHPUnit_Framework_TestCase {
 			$this->assertFileNotExists($saveTo, sprintf('Test file %s could not be removed before write test.', $saveTo));
 		}
 		
-		$file->saveFile($saveTo, 'xls');
+		$file->saveFile($saveTo, 'Excel5');
 		
 		$this->assertFileExists($saveTo, sprintf('Apparently, file %s could not be written during write test.', $saveTo));
 		

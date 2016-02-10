@@ -276,28 +276,14 @@ class ExcelWriter
     /**
      * Send file to client.
      * 
-     * @param string $filename Filename without extension
-     * @param string $format One of xls|xlsx
+     * @param string $filename Filename with extension
+     * @param string $format A value from \PHPExcel_IOFactory::$_autoResolveClasses
      */
     public function outputFile($filename, $format)
     {
-        $filename = sprintf('%s.%s', str_replace(' ', '_', $filename), $format);
-
-        if ($format == 'xlsx')
-        {
-            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-            header('Content-Disposition: attachment;filename="' . $filename. '"');
-            header('Cache-Control: max-age=0');
-            $objWriter = new \PHPExcel_Writer_Excel2007($this->objPHPExcel);
-        }
-        else
-        {
-            header('Content-Type: application/vnd.ms-excel');
-            header('Content-Disposition: attachment;filename="' . $filename . '"');
-            header('Cache-Control: max-age=0');
-            $objWriter = \PHPExcel_IOFactory::createWriter($this->objPHPExcel,
-                            'Excel5');
-        }
+        header('Content-Disposition: attachment;filename="' . $filename. '"');
+        header('Cache-Control: max-age=0');
+        $objWriter = \PHPExcel_IOFactory::createWriter($this->objPHPExcel, $format);
         $objWriter->save('php://output');
         $this->objPHPExcel->disconnectWorksheets();
 
@@ -312,7 +298,7 @@ class ExcelWriter
      * By default, it will not overwrite an existing file with the same name.
      *
      * @param string $filename Filename with path
-     * @param string $format One of xls|xlsx
+     * @param string $format A value from \PHPExcel_IOFactory::$_autoResolveClasses
      * @param bool $canOverWrite Set to true if you want to let an existing file be overwritten upon saving.
      *
      * @return bool
@@ -321,16 +307,6 @@ class ExcelWriter
      */
     public function saveFile($filename, $format, $canOverWrite = false)
     {
-        switch ($format)
-        {
-            case 'xlsx':
-                $format = 'Excel2007';
-                break;
-            case 'xls':
-                $format = 'Excel5';
-                break;
-        }
-
         $objWriter = \PHPExcel_IOFactory::createWriter($this->objPHPExcel, $format);
 
         if (!$canOverWrite and file_exists($filename))
