@@ -3,6 +3,7 @@
   "description": "This bundle integrates phpExcel library into a Symfony bundle. It lets you read (and write) simple Excel|CSV files.",
   "minimum-stability": "stable",
   "license": "MIT",
+  "abandoned": true,
   "authors": [
     {
       "name": "Christian Mattart",
