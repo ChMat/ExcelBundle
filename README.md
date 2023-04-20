@@ -3,6 +3,10 @@
 This bundle integrates phpExcel library into a Symfony bundle. 
 It lets you read (and write) simple Excel|CSV files.
 
+## 📕 Archived repository
+
+This repository is not maintained anymore.
+
 ## Installation
 
 ### Add the Bundle to your `composer.json`
